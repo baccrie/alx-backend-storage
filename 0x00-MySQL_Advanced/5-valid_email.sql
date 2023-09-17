@@ -2,13 +2,13 @@
 -- A script that validates the email_validation column after anu update
 
 DELIMETER $$
-CREATE TRIGGER email_validation AFTER UPDATE
+CREATE TRIGGER email_validation BEFORE UPDATE
 ON users
 FOR EACH ROW
     BEGIN
     
-    SET NEW.valid_email = 0
-    where old.email <> NEW.email;
+    SET NEW.valid_email = 1
+    where old.email != NEW.email;
 
     END 
 $$
