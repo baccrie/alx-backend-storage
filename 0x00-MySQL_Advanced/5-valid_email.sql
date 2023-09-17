@@ -1,3 +1,5 @@
+-- Email validation to sent
+-- A script that validates the email_validation column after anu update
 
 DELIMETER $$
 CREATE TRIGGER email_validation AFTER UPDATE
