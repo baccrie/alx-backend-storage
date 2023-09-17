@@ -2,7 +2,7 @@
 -- A script that validates the email_validation column after anu update
 
 DELIMETER $$
-CREATE TRIGGER email_validation BEFORE UPDATE
+CREATE TRIGGER email_trigger BEFORE UPDATE
 ON users
 FOR EACH ROW
     BEGIN
