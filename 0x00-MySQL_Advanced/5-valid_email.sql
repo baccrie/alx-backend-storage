@@ -8,7 +8,7 @@ FOR EACH ROW
     BEGIN
     
     SET NEW.valid_email = 1
-    where old.email != NEW.email;
+    where old.email <> NEW.email;
 
     END 
 $$
