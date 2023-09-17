@@ -7,7 +7,7 @@ ON users
 FOR EACH ROW
     BEGIN
     
-    SET NEW.valid_email = 1
+    SET NEW.valid_email = 0
     where old.email <> NEW.email;
 
     END 
