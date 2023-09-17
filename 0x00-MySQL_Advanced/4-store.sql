@@ -1,6 +1,13 @@
--- 4. Buy buy buy
--- creates a trigger that decreases the quantity of an item after adding a new order
-CREATE TRIGGER buy_trigger
-AFTER INSERT ON orders
+-- Task 4  buy buy buy
+-- A script that creates a trigger that decreases the quantity of an item after adding a new order.
+
+CREATE TRIGGER update_items AFTER INSERT
+ON orders
 FOR EACH ROW
-UPDATE items SET quantity = quantity - NEW.number WHERE name = NEW.item_name;
+UPDATE items
+    BEGIN
+    
+    SET quantity = quantity + new.number
+    where name = new.item_name;
+
+    END

@@ -1,9 +1,6 @@
--- 1. In and not out 
--- creates a table users
-CREATE TABLE IF NOT EXISTS users (
-    id INT AUTO_INCREMENT, 
-    email VARCHAR(255) NOT NULL UNIQUE,
-    name VARCHAR(255),
-    country ENUM('US', 'CO', 'TN') NOT NULL,
-    PRIMARY KEY (id)
-);
+-- 4. Buy buy buy
+-- creates a trigger that decreases the quantity of an item after adding a new order
+CREATE TRIGGER buy_trigger
+AFTER INSERT ON orders
+FOR EACH ROW
+UPDATE items SET quantity = quantity - NEW.number WHERE name = NEW.item_name;
