@@ -1,6 +1,6 @@
--- 2. Best band ever! 
---  ranks country origins of bands, ordered by the number of (non-unique) fans
-SELECT origin AS origin, SUM(fans) AS nb_fans
-FROM metal_bands
-GROUP BY origin
-ORDER BY nb_fans DESC;
+-- Task 2  Best band ever!
+-- A script that imports a sql dump file and Reads data to stdout
+
+CREATE TABLE IF NOT EXISTS users (
+    SELECT country as origin, fans as nb_fans from metal_bands ORDER BY fans DESC;
+    );
